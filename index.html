@@ -26,7 +26,7 @@
           value.”
         </p>
         <h5 class="quotation-author">Ada Lovelace</h5>
-        <button class="quotation-refresh">
+        <button class="quotation-refresh logo">
           <img src="./starter-code/assets/desktop/icon-refresh.svg" alt="" />
         </button>
       </header>
@@ -34,21 +34,20 @@
       <!-- info -->
       <div class="info">
         <div class="day-time">
-          <button class="day-time-logo">
+          <button class="day-time-logo logo">
             <img src="./starter-code/assets/desktop/icon-sun.svg" alt="" />
           </button>
           <h4>good morning</h4>
         </div>
         <div class="day-hour">
-          <h1>11:37</h1>
-          <span>BST</span>
+          <h1 class="hour">11:37<span class="hour-place">BST</span></h1>
         </div>
         <h3 class="place">in london, uk</h3>
-        <button>
+        <button class="toggle-info">
           more
           <img
             src="./starter-code/assets/desktop/icon-arrow-up.svg"
-            alt=""
+            alt="arrow"
             class=""
           />
         </button>
@@ -56,28 +55,30 @@
 
       <!-- more-info -->
       <div class="more-info">
-        <!-- contaainer -->
-        <div class="container">
-          <!-- single-info -->
-          <div class="single-info">
-            <h6>current timezone</h6>
-            <h4>Europe/London</h4>
+        <div class="more-info-container">
+          <!-- contaainer -->
+          <div class="container">
+            <!-- single-info -->
+            <div class="single-info">
+              <h6>current timezone</h6>
+              <h2 class="timezone">Europe/London</h2>
+            </div>
+            <div class="single-info">
+              <h6>day of the year</h6>
+              <h2 class="year">2956</h2>
+            </div>
           </div>
-          <div class="single-info">
-            <h6>day of the year</h6>
-            <h4>2956</h4>
-          </div>
-        </div>
-        <!-- contaainer -->
-        <div class="container">
-          <!-- single-info -->
-          <div class="single-info">
-            <h6>day of the week</h6>
-            <h4>5</h4>
-          </div>
-          <div class="single-info">
-            <h6>week number</h6>
-            <h4>42</h4>
+          <!-- contaainer -->
+          <div class="container">
+            <!-- single-info -->
+            <div class="single-info">
+              <h6>day of the week</h6>
+              <h2 class="week">5</h2>
+            </div>
+            <div class="single-info">
+              <h6>week number</h6>
+              <h2 class="number-week">42</h2>
+            </div>
           </div>
         </div>
       </div>
