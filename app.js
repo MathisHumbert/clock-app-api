@@ -4,10 +4,12 @@ import getTime from './utils/setTime.js';
 
 // get element
 const toggleBtn = document.querySelector('.toggle-info');
+const refreshBtn = document.querySelector('.quotation-refresh');
 const hero = document.querySelector('.hero');
 const quotationContainer = document.querySelector('.quotation');
-const info = document.querySelector('.more-info');
-const refreshBtn = document.querySelector('.quotation-refresh');
+const moreInfo = document.querySelector('.more-info');
+const info = document.querySelector('.info');
+const arrowImg = document.querySelector('.arrow');
 
 // events
 window.addEventListener('DOMContentLoaded', () => {
@@ -31,21 +33,25 @@ refreshBtn.addEventListener('click', () => {
 });
 
 toggleBtn.addEventListener('click', () => {
-  console.log('hello');
-  hero.classList.toggle('open');
-  info.classList.add('animate');
+  if (hero.classList.contains('open')) {
+    hero.classList.remove('open');
+    toggleDisplay();
+    arrowImg.style.transform = 'rotate(180deg)';
+  } else {
+    hero.classList.add('open');
+    toggleDisplay();
+    arrowImg.style.transform = 'rotate(0deg)';
+  }
 });
 
-// toggleBtn.addEventListener('click', () => {
-//   if (hero.classList.contains('open')) {
-//     hero.classList.remove('open');
-//     setTimeout(() => {
-//       quotationContainer.style.display = 'block';
-//       info.style.paddingTop = 0;
-//     }, 600);
-//   } else {
-//     hero.classList.add('open');
-//     quotationContainer.style.display = 'none';
-//     info.style.paddingTop = '4rem';
-//   }
-// });
+function toggleDisplay() {
+  info.classList.add('animate-more');
+  moreInfo.classList.add('animate-more');
+  quotationContainer.classList.add('animate-more');
+
+  setTimeout(() => {
+    info.classList.remove('animate-more');
+    moreInfo.classList.remove('animate-more');
+    quotationContainer.classlist.remove('animate-more');
+  }, 1000);
+}

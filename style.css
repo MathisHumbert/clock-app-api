@@ -133,6 +133,9 @@ header
 .animate.quotation {
   animation: newQuote 1s ease-in;
 }
+.animate-more.quotation {
+  animation: toggleMoreInfo 1s ease-in;
+}
 
 .open .quotation {
   display: none;
@@ -166,8 +169,8 @@ info
   color: var(--color-hero);
 }
 
-.animate.info {
-  animation: newQuote 1s ease-in;
+.animate-more.info {
+  animation: toggleMoreInfo 1s ease-in;
 }
 
 .day-time {
@@ -214,15 +217,14 @@ more info
 .more-info {
   display: none;
 }
-
-.animate.more-info {
-  animation: newQuote 1s ease-in;
+.animate-more.more-info {
+  animation: toggleMoreInfo 1s ease-in;
 }
 
 .open .more-info {
   display: block;
   background-color: var(--bg-color);
-  color: --color-info;
+  color: var(--color-info);
   height: 100%;
   width: 100%;
   padding: 4rem 26px;
@@ -247,6 +249,21 @@ more info
 }
 
 @keyframes newQuote {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes toggleMoreInfo {
   0% {
     opacity: 0;
   }
