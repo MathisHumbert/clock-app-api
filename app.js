@@ -1,64 +1,51 @@
+// imports
+import getQuote from './utils/setQuote.js';
+import getTime from './utils/setTime.js';
+
+// get element
 const toggleBtn = document.querySelector('.toggle-info');
 const hero = document.querySelector('.hero');
 const quotationContainer = document.querySelector('.quotation');
-const info = document.querySelector('.info');
+const info = document.querySelector('.more-info');
+const refreshBtn = document.querySelector('.quotation-refresh');
 
-toggleBtn.addEventListener('click', () => {
-  if (hero.classList.contains('open')) {
-    hero.classList.remove('open');
-    setTimeout(() => {
-      quotationContainer.style.display = 'block';
-      info.style.paddingTop = 0;
-    }, 600);
-  } else {
-    hero.classList.add('open');
-    quotationContainer.style.display = 'none';
-    info.style.paddingTop = '4rem';
-  }
+// events
+window.addEventListener('DOMContentLoaded', () => {
+  getTime('https://worldtimeapi.org/api/ip');
+  getQuote(
+    'https://raw.githubusercontent.com/skolakoda/programming-quotes-api/master/backup/quotes.json'
+  );
 });
 
-async function fetchTime(URL) {
-  let response = await fetch(URL);
-  let data = await response.json();
-  return data;
-}
+refreshBtn.addEventListener('click', () => {
+  quotationContainer.classList.add('animate');
+  setTimeout(
+    () =>
+      getQuote(
+        'https://raw.githubusercontent.com/skolakoda/programming-quotes-api/master/backup/quotes.json'
+      ),
+    250
+  );
 
-async function getTime(URL1) {
-  let time = await fetchTime(URL1);
-  displayTime(time);
-}
+  setTimeout(() => quotationContainer.classList.remove('animate'), 1000);
+});
 
-getTime('https://worldtimeapi.org/api/ip');
+toggleBtn.addEventListener('click', () => {
+  console.log('hello');
+  hero.classList.toggle('open');
+  info.classList.add('animate');
+});
 
-getData(
-  'https://raw.githubusercontent.com/skolakoda/programming-quotes-api/master/backup/quotes.json'
-);
-
-function displayTime(time) {
-  const hours = document.querySelector('.hour');
-  const hourPlace = document.querySelector('.hour-place');
-  const place = document.querySelector('.place');
-  const timezoneEl = document.querySelector('.timezone');
-  const year = document.querySelector('.year');
-  const week = document.querySelector('.week');
-  const numberWeek = document.querySelector('.number-week');
-
-  let {
-    timezone,
-    day_of_year,
-    day_of_week,
-    week_number,
-    datetime,
-    abbreviation,
-  } = time;
-
-  hourPlace.textContent = abbreviation;
-  place.innerHTML = `in ${timezone.split('/').reverse().join(', ')}`;
-  hours.textContent = `${datetime.split('T')[1].split(':')[0]}:${
-    datetime.split('T')[1].split(':')[1]
-  }`;
-  timezoneEl.innerHTML = timezone;
-  year.innerHTML = day_of_year;
-  week.innerHTML = day_of_week;
-  numberWeek.innerHTML = week_number;
-}
+// toggleBtn.addEventListener('click', () => {
+//   if (hero.classList.contains('open')) {
+//     hero.classList.remove('open');
+//     setTimeout(() => {
+//       quotationContainer.style.display = 'block';
+//       info.style.paddingTop = 0;
+//     }, 600);
+//   } else {
+//     hero.classList.add('open');
+//     quotationContainer.style.display = 'none';
+//     info.style.paddingTop = '4rem';
+//   }
+// });

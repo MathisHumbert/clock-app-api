@@ -107,24 +107,35 @@ h1 {
 hero
 */
 .hero {
-  max-width: 375px;
   margin: 0 auto;
   width: 100vw;
   min-height: 100vh;
   height: 100%;
-  padding: 2rem 26px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 /* 
 header
 */
 .quotation {
+  max-width: 375px;
+  width: 100%;
+  padding: 2rem 26px;
+  margin: 0 auto;
   position: relative;
   height: fit-content;
   color: var(--color-hero);
+}
+
+.animate.quotation {
+  animation: newQuote 1s ease-in;
+}
+
+.open .quotation {
+  display: none;
 }
 
 .quotation-text {
@@ -137,19 +148,26 @@ header
 
 .quotation-refresh {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2rem;
+  right: 26px;
 }
 
 /* 
 info
 */
 .info {
+  max-width: 375px;
+  width: 100%;
+  padding: 2rem 26px;
+  margin: 0 auto;
   height: fit-content;
   display: grid;
   gap: 1rem;
   color: var(--color-hero);
-  transition: align-self 1s linear;
+}
+
+.animate.info {
+  animation: newQuote 1s ease-in;
 }
 
 .day-time {
@@ -187,42 +205,34 @@ info
   transform: rotate(180deg);
 }
 
+.hour-place {
+  margin-left: 10px;
+}
 /* 
 more info
 */
 .more-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: fit-content;
-  overflow: hidden;
-  visibility: hidden;
-  transition: visibility 0.6s linear;
+  display: none;
+}
+
+.animate.more-info {
+  animation: newQuote 1s ease-in;
 }
 
 .open .more-info {
-  visibility: visible;
-}
-
-.open .more-info {
-  visibility: visible;
-}
-
-.more-info-container {
+  display: block;
   background-color: var(--bg-color);
   color: --color-info;
   height: 100%;
-  transform: translateY(100%);
-  margin: 0 auto;
+  width: 100%;
   padding: 4rem 26px;
-  display: grid;
-  gap: 1rem;
-  transition: transform 0.6s linear;
 }
 
-.open .more-info-container {
-  transform: translateY(0%);
+.more-info-container {
+  max-width: 375px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
 }
 
 .container {
@@ -234,4 +244,14 @@ more info
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@keyframes newQuote {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
