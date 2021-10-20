@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./starter-code/assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Clock App</title>
+  </head>
+  <body>
+    <!-- hero -->
+    <main class="hero">
+      <!-- header -->
+      <header class="quotation">
+        <p class="quotation-text">
+          “The science of operations, as derived from mathematics more
+          especially, is a science of itself, and has its own abstract truth and
+          value.”
+        </p>
+        <h5 class="quotation-author">Ada Lovelace</h5>
+        <button class="quotation-refresh">
+          <img src="./starter-code/assets/desktop/icon-refresh.svg" alt="" />
+        </button>
+      </header>
+
+      <!-- info -->
+      <div class="info">
+        <div class="day-time">
+          <button class="day-time-logo">
+            <img src="./starter-code/assets/desktop/icon-sun.svg" alt="" />
+          </button>
+          <h4>good morning</h4>
+        </div>
+        <div class="day-hour">
+          <h1>11:37</h1>
+          <span>BST</span>
+        </div>
+        <h3 class="place">in london, uk</h3>
+        <button>
+          more
+          <img
+            src="./starter-code/assets/desktop/icon-arrow-up.svg"
+            alt=""
+            class=""
+          />
+        </button>
+      </div>
+
+      <!-- more-info -->
+      <div class="more-info">
+        <!-- contaainer -->
+        <div class="container">
+          <!-- single-info -->
+          <div class="single-info">
+            <h6>current timezone</h6>
+            <h4>Europe/London</h4>
+          </div>
+          <div class="single-info">
+            <h6>day of the year</h6>
+            <h4>2956</h4>
+          </div>
+        </div>
+        <!-- contaainer -->
+        <div class="container">
+          <!-- single-info -->
+          <div class="single-info">
+            <h6>day of the week</h6>
+            <h4>5</h4>
+          </div>
+          <div class="single-info">
+            <h6>week number</h6>
+            <h4>42</h4>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- js -->
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
