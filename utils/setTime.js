@@ -44,6 +44,8 @@ function displayGood(time) {
   const html = document.querySelector('html');
   const dayLogo = document.querySelector('.day-logo');
 
+  time = time.split(':')[0];
+
   let goodText = 'good ';
 
   time >= 5 && time < 12
@@ -53,7 +55,6 @@ function displayGood(time) {
     : (goodText += 'night');
 
   good.textContent = goodText;
-
   if (goodText.includes('night')) {
     html.classList.add('dark');
     dayLogo.src = '../starter-code/assets/desktop/icon-moon.svg';
