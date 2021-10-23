@@ -1,3 +1,5 @@
+import getQuote from './setQuote.js';
+
 const hero = document.querySelector('.hero');
 const quotationContainer = document.querySelector('.quotation');
 const moreInfo = document.querySelector('.more-info');

@@ -26,6 +26,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: -2;
+  overflow-x: hidden;
 }
 
 body.day-loaded {
@@ -108,6 +109,7 @@ h1 {
 hero
 */
 .hero {
+  padding: 2rem 0;
   margin: 0 auto;
   width: 100vw;
   min-height: 100vh;
@@ -118,13 +120,18 @@ hero
   gap: 2rem;
 }
 
+.open.hero {
+  padding-bottom: 0;
+}
+
 /* 
 header
 */
 .quotation {
+  border: 1px solid red;
   max-width: 375px;
   width: 100%;
-  padding: 2rem 26px;
+  padding: 0 2rem;
   margin: 0 auto;
   position: relative;
   height: fit-content;
@@ -152,8 +159,8 @@ header
 
 .quotation-refresh {
   position: absolute;
-  top: 2rem;
-  right: 26px;
+  top: 3px;
+  right: 2rem;
   opacity: 1;
   transition: transform 0.4s linear;
 }
@@ -176,9 +183,10 @@ info
 .info {
   max-width: 375px;
   width: 100%;
-  padding: 2rem 26px;
+  padding: 0 2rem;
   margin: 0 auto;
   height: fit-content;
+  border: 1px solid red;
   display: grid;
   gap: 1rem;
   color: var(--color-hero);
@@ -192,10 +200,6 @@ info
   display: flex;
   gap: 1rem;
   align-items: center;
-}
-
-.day-hour {
-  height: 100px;
 }
 
 .toggle-info {
@@ -249,7 +253,7 @@ more info
   color: var(--color-info);
   height: 100%;
   width: 100%;
-  padding: 4rem 26px;
+  padding: 2rem 2rem;
 }
 
 .more-info-container {
@@ -292,5 +296,111 @@ more info
 
   100% {
     opacity: 1;
+  }
+}
+
+/* tablet design */
+@media screen and (min-width: 768px) {
+  body.day-loaded {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../starter-code/assets/tablet/bg-image-daytime.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .dark body {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('../starter-code/assets/tablet/bg-image-nighttime.jpg');
+  }
+
+  span {
+    font-size: 32px;
+  }
+
+  h6 {
+    font-size: 13px;
+    letter-spacing: 2.6px;
+  }
+
+  p,
+  h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 3.6px;
+  }
+
+  h3 {
+    font-size: 18px;
+    letter-spacing: 3.6px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: 175px;
+    line-height: 175px;
+    letter-spacing: -4.38px;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .quotation {
+    max-width: 700px;
+    padding: 0 3rem;
+  }
+
+  .quotation-refresh {
+    right: 3rem;
+  }
+
+  .quotation-text {
+    max-width: 95%;
+  }
+
+  .info {
+    max-width: 700px;
+    padding: 0 3rem;
+  }
+
+  .open .more-info {
+    display: block;
+    background: var(--bg-color);
+    backdrop-filter: saturate(100%) blur(2px);
+    color: var(--color-info);
+    height: 100%;
+    width: 100%;
+    padding: 3rem 3rem;
+  }
+
+  .more-info-container {
+    max-width: 700px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .container {
+    gap: 2rem;
+  }
+
+  .single-info {
+    display: block;
   }
 }
