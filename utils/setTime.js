@@ -23,19 +23,19 @@ function displayTime(time) {
     datetime,
     abbreviation,
   } = time;
-  let acutalTime = `${datetime.split('T')[1].split(':')[0]}:${
+  let actualTime = `${datetime.split('T')[1].split(':')[0]}:${
     datetime.split('T')[1].split(':')[1]
   }`;
 
   // set element
 
   place.innerHTML = `in ${timezone.split('/').reverse().join(', ')}`;
-  hours.innerHTML = `${acutalTime}<span class="hour-place">${abbreviation}</span>`;
+  hours.innerHTML = `${actualTime}<span class="hour-place">${abbreviation}</span>`;
   timezoneEl.innerHTML = timezone;
   year.innerHTML = day_of_year;
   week.innerHTML = day_of_week;
   numberWeek.innerHTML = week_number;
-  displayGood(acutalTime);
+  displayGood(actualTime);
 }
 
 // display text
@@ -59,7 +59,7 @@ function displayGood(time) {
     html.classList.add('dark');
     dayLogo.src = '../starter-code/assets/desktop/icon-moon.svg';
   } else {
-    html.classList.remove('dark');
+    document.body.classList.add('day-loaded');
     dayLogo.src = '../starter-code/assets/desktop/icon-sun.svg';
   }
 }

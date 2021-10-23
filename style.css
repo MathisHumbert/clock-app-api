@@ -22,16 +22,18 @@ html.dark {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('./starter-code/assets/mobile/bg-image-daytime.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: -2;
+}
+
+body.day-loaded {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../starter-code/assets/mobile/bg-image-daytime.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .dark body {
@@ -40,7 +42,7 @@ body {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url('./starter-code/assets/mobile/bg-image-nighttime.jpg');
+    url('../starter-code/assets/mobile/bg-image-nighttime.jpg');
 }
 
 .logo {
@@ -242,7 +244,8 @@ more info
 
 .open .more-info {
   display: block;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
+  backdrop-filter: saturate(100%) blur(2px);
   color: var(--color-info);
   height: 100%;
   width: 100%;
