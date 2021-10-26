@@ -404,3 +404,109 @@ more info
     display: block;
   }
 }
+
+/* desktop design */
+@media screen and (min-width: 1440px) {
+  body.day-loaded {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../starter-code/assets/tablet/bg-image-daytime.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .dark body {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('../starter-code/assets/tablet/bg-image-nighttime.jpg');
+  }
+
+  span {
+    font-size: 32px;
+  }
+
+  h6 {
+    font-size: 13px;
+    letter-spacing: 2.6px;
+  }
+
+  p,
+  h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 3.6px;
+  }
+
+  h3 {
+    font-size: 18px;
+    letter-spacing: 3.6px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: 175px;
+    line-height: 175px;
+    letter-spacing: -4.38px;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .quotation {
+    max-width: 700px;
+    padding: 0 3rem;
+  }
+
+  .quotation-refresh {
+    right: 3rem;
+  }
+
+  .quotation-text {
+    max-width: 95%;
+  }
+
+  .info {
+    max-width: 700px;
+    padding: 0 3rem;
+  }
+
+  .open .more-info {
+    display: block;
+    background: var(--bg-color);
+    backdrop-filter: saturate(100%) blur(2px);
+    color: var(--color-info);
+    height: 100%;
+    width: 100%;
+    padding: 3rem 3rem;
+  }
+
+  .more-info-container {
+    max-width: 700px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .container {
+    gap: 2rem;
+  }
+
+  .single-info {
+    display: block;
+  }
+}

@@ -9,7 +9,7 @@ const refreshBtn = document.querySelector('.quotation-refresh');
 
 // event load
 window.addEventListener('DOMContentLoaded', () => {
-  getTime('https://worldtimeapi.org/api/ip');
+  getTime('http://worldtimeapi.org/api/ip');
   getQuote(
     'https://raw.githubusercontent.com/skolakoda/programming-quotes-api/master/backup/quotes.json'
   );
